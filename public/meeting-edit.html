@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calendar.css">
+    <title>Edit Meeting</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            Personal Calendar
+        </div>
+        <span class="toggle-button" id="toggleButton">&#9776;</span>
+    </div>
+
+    <div class="container">
+        <div class="sidenav" id="sidenav">
+            <div class="links">
+                <a href="calendar.html">Calendar</a>
+                <a href="shared-calendar.html">Shared Calendar</a>
+                <a href="friends.html">Friends</a>
+                <a href="upcoming-meetings.html">Meets</a>
+                <a href="create-meeting.html">Create Meet</a>
+            </div>
+            <div class="profile">
+                <div id="userEmail" class="userinfo">email@gmail.com</div>
+                <button id="logoutButton">Logout</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Edit Meeting</h2>
+            <form id="editMeetingForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+
+                <label for="startDate">Start Date:</label>
+                <input type="datetime-local" id="startDate" required>
+
+                <label for="endDate">End Date:</label>
+                <input type="datetime-local" id="endDate" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const currentUserEmail = localStorage.getItem('currentUserEmail');
+        if (currentUserEmail) {
+            document.getElementById('userEmail').textContent = currentUserEmail;
+        }
+
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            document.getElementById('sidenav').classList.toggle('active');
+        });
+    </script>
+    <script src="js/meeting-edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calendar.css">
+    <title>Personal Calendar</title>
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="logo">
+            Personal Calendar
+        </div>
+        <span class="toggle-button" id="toggleButton">&#9776;</span>
+    </div>
+
+    <div class="container">
+        <div class="sidenav" id="sidenav">
+            <div class="links">
+                <a href="calendar.html">Calendar</a>
+                <a href="shared-calendar.html">Shared Calendar</a>
+                <a href="friends.html">Friends</a>
+                <a href="upcoming-meetings.html">Meets</a>
+                <a href="create-meeting.html">Create Meet</a>
+            </div>
+            <div class="profile">
+                <div id="userEmail" class="userinfo">email@gamil.com</div>
+                <button id="logoutButton">Logout</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="filters">
+                <p>Filters</p>
+                <form action="">
+                    <input type="button" value="Daily">
+                    <input type="button" value="Weekly">
+                    <input type="button" value="Monthly">
+                </form>
+            </div>
+            <div class="line"></div>
+            <div class="meets">
+                <div class="meeting-actions">
+                    <button class="viewButton">View</button>
+                    <button class="editButton">Edit</button>
+                    <button class="deleteButton">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const currentUserEmail = localStorage.getItem('currentUserEmail');
+        if (currentUserEmail) {
+            document.getElementById('userEmail').textContent = currentUserEmail;
+        }
+
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            document.getElementById('sidenav').classList.toggle('active');
+        });
+    </script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>

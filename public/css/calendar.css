@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    height: 100vh;
+}
+
+.nav {
+    width: 100%;
+    height: 5vh;
+    background: #512da8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.logo {
+    font-size: 20px;
+    color: #fff;
+}
+
+.toggle-button {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #fff, #c9d6ff);
+}
+
+.sidenav {
+    width: 200px;
+    height: 95vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.links {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.profile {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.profile .userinfo {
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.profile button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.content {
+    margin: 12px 12px;
+    height: 90vh;
+    width: 100%;
+    margin-left: 220px;
+}
+
+.filters {
+    padding: 5px 5px;
+    height: 8vh;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filters p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.filters form input {
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    background: #fff;
+    margin: 0 3px;
+}
+
+.search {
+    padding: 5px 5px;
+    height: 8vh;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.line {
+    border: 1px solid black;
+}
+
+.meets {
+    width: 100%;
+    height: 84vh;
+    margin: 5px 10px;
+}
+
+button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.friend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 5vh;
+}
+
+.friend a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 4px 4px;
+    background: #512da8;
+    color: #fff;
+}
+
+.create-meeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.create-meeting-form {
+    height: 50vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-meeting-form input {
+    margin: 5px 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        left: -220px; 
+    }
+
+    .sidenav.active {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .toggle-button {
+        display: block;
+    }
+}
