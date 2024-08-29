@@ -24,7 +24,7 @@
                 <a href="create-meeting.html">Create Meet</a>
             </div>
             <div class="profile">
-                <div id="userEmail" class="userinfo">email@gmail.com</div>
+                <div id="currentUserEmail" class="userinfo">email@gmail.com</div>
                 <button id="logoutButton">Logout</button>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     <input type="date" id="endDate">
                     <input type="text" placeholder="Description" id="description">
                     
-                    <input type="email" placeholder="User Email" id="userEmail">
+                    <input type="email" placeholder="User Email" id="userEmailInput">
                     <button type="button" id="addUserButton">Add</button>
     
                     <ul id="sharedWithList"></ul>
@@ -51,7 +51,7 @@
     <script>
         const currentUserEmail = localStorage.getItem('currentUserEmail');
         if (currentUserEmail) {
-            document.getElementById('userEmail').textContent = currentUserEmail;
+            document.getElementById('currentUserEmail').textContent = currentUserEmail;
         }
 
         document.getElementById('toggleButton').addEventListener('click', function() {

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sharedWith = [];
 
     function addUser() {
-        const userEmail = document.getElementById('userEmail').value.trim();
+        const userEmail = document.getElementById('userEmailInput').value.trim();
 
         if (!userEmail) {
             alert('Please enter a valid email.');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('This user is already added.');
         }
 
-        document.getElementById('userEmail').value = ''; 
+        document.getElementById('userEmailInput').value = ''; 
     }
 
     function updateSharedWithList() {
@@ -80,10 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Meeting created successfully!');
         window.location.href = 'calendar.html';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('button').addEventListener('click', function () {
+    document.getElementById('logoutButton').addEventListener('click', function () {
         localStorage.removeItem('currentUserEmail');
         window.location.href = 'index.html';
     });
